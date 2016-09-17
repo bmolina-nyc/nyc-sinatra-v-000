@@ -1,0 +1,14 @@
+successful connection to the landmarks edit page
+
+
+<h1>Update <%= @landmark.name%> !</h1>
+
+<form method="post" action="/landmarks/<%=@landmark.id%>">
+Landmark Name:<input type="text" name="landmark[name]" id="name" placeholder="<%=@landmark.name%>">
+
+Landmark Year Completed:<input type="text" name="landmark[year_completed]" id="year_completed" placeholder="<%=@landmark.year_completed%>">
+
+<br><br>
+ <input type="submit" value="Edit Landmark">
+
+</form>

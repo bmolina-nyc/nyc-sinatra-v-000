@@ -1,0 +1,58 @@
+successful connection to figures new page 
+
+
+<h1>Create a new figure!</h1>
+<form method="post" action="/figures">
+Figure Name:<input type="text" name="figure_name" placeholder="@figure.name">
+
+
+<h1>Choose a Landmark!</h1>
+  <%Landmark.all.each do |landmark| %>
+    <input type="checkbox"  id="landmark_<%=landmark.id%>" name="figure[landmark_ids][]" value="<%=landmark.id%>" ><%=  landmark.name%></input>
+  <%end%>
+
+<h1>Choose a title!</h1>
+  <%Title.all.each do |title| %>
+    <input type="checkbox" id="title_<%= title.id%>"  name="figure[title_ids][]" value="<%=title.id%>"><%= title.name %></input>
+  <%end%>
+
+    <h1> Create a new Landmark or new Title for your Figure<h1>
+
+     Landmark Name: <input type="text" name="new_landmark"></input>
+     Title Name: <input type="text" name="new_title"></input>
+    <br></br>
+
+     <br><br>
+
+   <input type="submit" value ="Create New Figure">
+
+
+</form>
+
+
+<!-- 
+describe FiguresController do
+  before do
+    queenb = Figure.create(:name => "Beyonce")
+    kanye = Figure.create(:name => "Kanye")
+    bqe = Landmark.create(name: 'BQE', year_completed: 1961)
+    mr_president = Title.create(name: "Mr. President")
+    bqe.figure = queenb
+    bqe.save
+  end
+
+  after do
+    Figure.destroy_all
+    Title.destroy_all
+    Landmark.destroy_all
+  end
+
+  it "allows you to view form to create a new figure" do
+    visit '/figures/new'
+    expect(page.body).to include('<form')
+    expect(page.body).to include('figure[name]')
+    expect(page.body).to include('figure[title_ids][]')
+    expect(page.body).to include('figure[landmark_ids][]')
+    expect(page.body).to include('landmark[name]')
+    expect(page.body).to include('title[name]')
+  end -->

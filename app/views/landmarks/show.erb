@@ -8,3 +8,9 @@
     <td><%= @landmark.year_completed %></td>
   </tr>
 <table>
+
+
+<h1>View all Landmarks!</h1>
+ <% Landmark.all.each do |landmark| %>
+    <h3><a href="/landmarks/<%=landmark.id%>"><%=landmark.name%>, <%=landmark.year_completed%></a></h3>
+  <% end %>

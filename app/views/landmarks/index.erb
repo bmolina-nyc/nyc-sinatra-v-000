@@ -1,0 +1,7 @@
+successful connection to the landmarks index page
+
+<h1> Choose a Landmark from the list below! </h1>
+
+  <% @landmarks.each do |landmark| %>
+    <h3><a href="/landmarks/<%=landmark.id%>"><%=landmark.name%>, <%=landmark.year_completed%></a></h3>
+  <% end %>

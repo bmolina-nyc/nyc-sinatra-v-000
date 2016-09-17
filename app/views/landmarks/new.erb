@@ -1,0 +1,19 @@
+successful connection to the landmarks new page
+
+
+
+
+<h1>Create a new landmark!</h1>
+  <form method="POST" action="/landmarks">
+  Figure Name:<input type="text" name="landmark_name" id="landmark[name]">
+  Year Completed:<input type="text" name="landmark_year_completed" id="landmark[year_completed]">
+
+<!-- You may not need the list on this page -->
+<!-- <h1>View all Landmarks!</h1>
+  <%Landmark.all.each do |landmark| %>
+    <input type="checkbox"  id="landmark_<%=landmark.id%>" name="figure[landmark_ids][]" value="<%=landmark.id%>" ><%=  landmark.name%> </input>
+  <%end%> -->
+
+  <br><br>
+  <input type="submit" value="Create New Landmark">
+</form>
